@@ -23,6 +23,12 @@ var upperCasedCharacters = [
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+// Prompt user to confirm how many characters they would like in their password
+function generatePassword() {
+  let confirmLength = (prompt("Choose between 8-128 characters."));
+
+  
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
