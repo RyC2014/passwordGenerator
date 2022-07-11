@@ -25,9 +25,8 @@ var generateBtn = document.querySelector("#generate");
 
 // Prompt user to confirm how many characters they would like in their password
 function generatePassword() {
-  let confirmLength = (prompt("Choose between 8-128 characters."));
-
   
+
 }
 // Write password to the #password input
 function writePassword() {
@@ -35,6 +34,14 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+}
+
+function getPrompts(){
+  characterlength = parseInt(prompt('How many characters would you like your password to be? (8 - 118 characters'));
+  
+  if(isNaN(characterlength)) 
+
 
 }
 
