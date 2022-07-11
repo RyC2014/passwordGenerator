@@ -3,7 +3,7 @@ var choiceArr = [];
 
 // Character arrays
 var specialCharacters = [
-  '@',  '%',  '+',  '\\',  '/',  "'",  '!',  '#',  '$',  '^',  '?',  ':',  ',',  ')',  '(',  '}',  '{',  ']',  '[',  '~',  '-',  '_',  '.'
+  '@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'
 ];
 
 // Numbers to be included in password
@@ -16,7 +16,7 @@ var lowerCasedCharacters = [
 
 // Upper case letters to be included in password
 var upperCasedCharacters = [
-  'A',  'B',  'C',  'D',  'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+  'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ];
 
 
@@ -25,7 +25,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Prompt user to confirm how many characters they would like in their password
 function generatePassword() {
-  
+
 
 }
 // Write password to the #password input
@@ -37,11 +37,18 @@ function writePassword() {
 
 }
 
-function getPrompts(){
+function getPrompts() {
   characterlength = parseInt(prompt('How many characters would you like your password to be? (8 - 118 characters'));
-  
-  if(isNaN(characterlength)) 
 
+  if (isNaN(characterlength) || characterlength < 8 || characterlength > 118) {
+    alert('Character length must be a number between 8 and 118 digits. Please try again');
+    return false;
+
+
+  }
+
+  if (confirm("Would you like your password to contain lowercase letters?"))
+    choiceArr = choiceArr.concat(lowerCasedCharacters)
 
 }
 
