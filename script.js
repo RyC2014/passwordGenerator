@@ -25,19 +25,43 @@ var generateBtn = document.querySelector("#generate");
 
 // Prompt user to confirm how many characters they would like in their password
 function generatePassword() {
+var password = '';
+for(var i = 0; i < characterlength; i++ )
+var randomLetter = Math.floor(math.random() * choiceArr.length);
+password = password + choiceArr[randomLetter]
 
+return password;
 
 }
+
+
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+
+
+  var correctPrompts = getPrompts();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+
+  if (correctPrompts) {
+    var newPassword = generatePassword();
+    passwordText.value = newPassword;
+
+
+
+
+  } else {
+    passwordText.value = '';
+
+
+  }
+
 
 }
 
 function getPrompts() {
+  choiceArr = []
+
   characterlength = parseInt(prompt('How many characters would you like your password to be? (8 - 118 characters'));
 
   if (isNaN(characterlength) || characterlength < 8 || characterlength > 118) {
@@ -49,6 +73,17 @@ function getPrompts() {
 
   if (confirm("Would you like your password to contain lowercase letters?"))
     choiceArr = choiceArr.concat(lowerCasedCharacters)
+
+  if (confirm("Would you like your password to contain uppercase letters?"))
+    choiceArr = choiceArr.concat(upperCasedCharacters)
+
+  if (confirm("Would you like your password to contain special characters"))
+    choiceArr = choiceArr.concat(specialCharacters)
+
+  if (confirm("Would you like your password to contain numbers?"))
+    choiceArr = choiceArr.concat(numericCharacters)
+
+  return true;
 
 }
 
