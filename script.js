@@ -24,15 +24,7 @@ var upperCasedCharacters = [
 var generateBtn = document.querySelector("#generate");
 
 // Prompt user to confirm how many characters they would like in their password
-function generatePassword() {
-var password = '';
-for(var i = 0; i < characterlength; i++ )
-var randomLetter = Math.floor(math.random() * choiceArr.length);
-password = password + choiceArr[randomLetter]
 
-return password;
-
-}
 
 
 // Write password to the #password input
@@ -86,6 +78,28 @@ function getPrompts() {
   return true;
 
 }
+
+// function generatePassword() {
+// var password = '';
+// for(var i = 0; i < characterlength; i++ )
+// var randomLetter = Math.floor(Math.random() * choiceArr.length);
+// password = password + choiceArr[randomLetter]
+
+// return password;
+
+// }
+
+function generatePassword() {
+  let password = '' //define empty string as a container
+    for (let i = 0; i < characterlength; i++) {
+      password += choiceArr[Math.floor(Math.random() * choiceArr.length)] //add generated character to the string
+    }
+  
+  return password;
+  
+  }
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
