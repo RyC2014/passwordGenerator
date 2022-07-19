@@ -79,25 +79,17 @@ function getPrompts() {
 
 }
 
-// function generatePassword() {
-// var password = '';
-// for(var i = 0; i < characterlength; i++ )
-// var randomLetter = Math.floor(Math.random() * choiceArr.length);
-// password = password + choiceArr[randomLetter]
 
-// return password;
-
-// }
 
 function generatePassword() {
   let password = '' //define empty string as a container
-    for (let i = 0; i < characterlength; i++) {
-      password += choiceArr[Math.floor(Math.random() * choiceArr.length)] //add generated character to the string
-    }
-  
-  return password;
-  
+  for (let i = 0; i < characterlength; i++) {
+    password += choiceArr[Math.floor(Math.random() * choiceArr.length)] //add generated character to the string
   }
+
+  return password;
+
+}
 
 
 
